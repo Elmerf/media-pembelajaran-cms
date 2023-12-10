@@ -35,5 +35,27 @@ export default defineType({
       type: 'boolean',
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'log_activities',
+      title: 'Log Activities',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'date',
+              title: 'Date',
+              type: 'datetime',
+            },
+            {
+              name: 'activity',
+              title: 'Activity',
+              type: 'string',
+            },
+          ],
+        },
+      ],
+    }),
   ],
 })
