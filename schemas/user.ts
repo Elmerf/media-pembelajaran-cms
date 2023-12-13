@@ -44,14 +44,31 @@ export default defineType({
           type: 'object',
           fields: [
             {
-              name: 'date',
-              title: 'Date',
+              name: 'date_start',
+              title: 'Date Start',
               type: 'datetime',
             },
             {
-              name: 'activity',
-              title: 'Activity',
-              type: 'string',
+              name: 'date_end',
+              title: 'Date End',
+              type: 'datetime',
+            },
+            {
+              name: 'module',
+              title: 'Module',
+              type: 'array',
+              of: [{type: 'reference', to: [{type: 'module'}]}],
+            },
+            {
+              name: 'assignment',
+              title: 'Assignment',
+              type: 'array',
+              of: [{type: 'reference', to: [{type: 'assignment'}]}],
+            },
+            {
+              name: 'time_spend',
+              title: 'Time Spend',
+              type: 'number',
             },
           ],
         },
